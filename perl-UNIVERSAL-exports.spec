@@ -17,6 +17,7 @@ Source:		http://www.cpan.org/modules/by-module/UNIVERSAL/%{module}-%{version}.ta
 BuildRequires:	perl-devel
 BuildRequires:  perl(Exporter::Lite)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is an alternative to Exporter intended to provide a universal, lightweight
