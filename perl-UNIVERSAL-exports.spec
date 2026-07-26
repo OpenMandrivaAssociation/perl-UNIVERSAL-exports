@@ -1,6 +1,4 @@
 %define upstream_name	 UNIVERSAL-exports
-%define upstream_version 0.05
-
 %if %{_use_internal_dependency_generator}
 %define __noautoprov 'perl\\(UNIVERSAL\\)'
 %else
@@ -8,14 +6,14 @@
 %endif
 
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.05
+Release:	6
 
 Summary:	Lightweight, universal exporting of variables
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		https://metacpan.org/dist/UNIVERSAL-exports
-Source0:	http://www.cpan.org/modules/by-module/UNIVERSAL/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/UNIVERSAL/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -27,7 +25,7 @@ This is an alternative to Exporter intended to provide a universal, lightweight
 subset of its functionality.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ make test
 %changelog
 * Tue Jul 28 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.50.0-1mdv2010.0
 + Revision: 401991
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.05-4mdv2009.0
+- rebuild using %0.05 Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.05-4mdv2009.0
 + Revision: 258710
 - rebuild
 
